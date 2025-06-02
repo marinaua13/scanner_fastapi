@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Розмістити товар на поличку</title>
+</head>
+<body>
+    <h2>Сканування полиці та товару</h2>
+
+    <form method="post" action="/scan-shelf">
+        <label for="scan_input">Скануйте полицю або товар:</label><br>
+        <input type="text" id="scan_input" name="scan_input" autofocus required><br><br>
+
+        <button type="submit">Відправити</button>
+    </form>
+
+    <div style="margin-top: 20px;">
+        <p><strong>Етап:</strong> {{ step }}</p>
+        <p><strong>Поличка:</strong> {{ shelf }}</p>
+        <p><strong>Товар:</strong> {{ product }}</p>
+        <p><strong>Повторна поличка:</strong> {{ confirm_shelf }}</p>
+        <p style="color: green;">{{ success }}</p>
+        <p style="color: red;">{{ error }}</p>
+    </div>
+
+    <form method="post" action="/scan-shelf/reset">
+        <button type="submit">Очистити</button>
+    </form>
+
+</body>
+</html>
